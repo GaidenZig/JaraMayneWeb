@@ -10,10 +10,10 @@ html{
      background-color: rgb(253, 254, 0);
      position: fixed;
      z-index: -9;
-     width: 500px;
+     width: 70vw;
      height: inherit;
      transform: skew(-8deg, 0deg);
-     left: -21px;
+     left: -15%;
 }
 .BG2{
      background-color: rgb(178, 178 , 178);
@@ -43,12 +43,19 @@ div .collapsible-header{
      letter-spacing: 7px;
      color: black;
 }
+
 .galeria img{
     box-shadow: 0 8px 10px -4px rgba(0,0,0,.6); 
     border-radius: 12px;
-    height: 161.7px;  
+    height: 161.7px;
+    cursor: pointer;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
-
+.opacity-img{
+     border-bottom-left-radius: 10px;
+     border-bottom-right-radius: 10px;
+}
 .card{
      border-radius: 20px;
 }
@@ -60,8 +67,22 @@ div.card-image{
 }
 .card-title{
      font-size: 19px !important;
-     
-} 
+     background-color: rgba(0, 0, 0, 0.678);
+     width: 100%;
+     padding-left: 2px !important;
+     padding-right: 5px !important;
+     padding-top: 2px !important;
+     padding-bottom: 2px !important;
+     border-bottom-left-radius: 10px;
+     border-bottom-right-radius: 10px;
+}
+/* btn-small{
+     font-size: 8px;
+     padding:0 8px;
+     text-align: center;
+     margin-top: 10%;
+     height: ;
+} */
 .tractor{
      border-radius: 180%;
 }
@@ -141,4 +162,9 @@ div .card{
 /*lg----large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { }
 /*xl----Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) { }
+@media (min-width: 1200px) { 
+     .BG1{
+          transform: skew(-6deg, 0deg);
+          left: -39%;
+     }
+}
