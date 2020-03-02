@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <!-- Compiled and minified JavaScript -->
+
+
+     <title>Lightbox | Materialize</title>
+
+     <!-- Estilos CSS -->
+     <link rel="stylesheet" href="./css/estilos.css">
+     <!--jquery-->
+     <script src="https://code.jquery.com/jquery-3.4.1.js"
+          integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+     <!-- cdn para enviar correo -->
+     <script src="https://smtpjs.com/v3/smtp.js"> </script>
+</head>
+
+<div class="BG1"></div>
+<div class="BG2"></div>
+
+<body>
+     <script>
+          let cualquiera = setInterval(() => {
+
+               if ($(window).width() < 600) {
+                    $('.ajuste').removeClass('horizontal');
+
+               } else {
+                    $('.ajuste').addClass('horizontal');
+               }
+          }, 100);
+     </script>
+     <!-- imagen numero 2------------------------------------------------------------------ -->
+     <div id="imagen1" class="modal">
+          <div class="ajuste card horizontal">
+               <div class="card-image waves-effect waves-block waves-light arreglo">
+                    <img class="activator col s12 " src="img/2.jpg">
+                    <span class="card-title letras2"><b>Arena Gruesa<br></b>negra de planta</span>
+               </div>
+               <div class="card-content col s12">
+                    <div class="row">
+                         <div class="col s12 m3">
+                              <label for="cantidad1">Cantidad en m<sup>3</sup></label>
+                              <input id="cantidad1" type="number">
+                         </div>
+                         <div class="col s12 m9">
+                              <label for="selectordeciudad1">Seleccione Comuna</label>
+                              <select class="sel" id="selectordeciudad1">
+                                   <option value="" disabled selected>seleccione...</option>
+                                   <option value="4732">Quillota</option>
+                                   <option value="1664">limache</option>
+                                   <option value="3276">Olmué</option>
+                                   <option value="3614">Villa Alemana</option>
+                                   <option value="2132">Peña blanca</option>
+                                   <option value="4732">Quilpue</option>
+                                   <option value="3796">Belloto Norte</option>
+                                   <option value="6890">El Salto</option>
+                                   <option value="7956">Viña centro</option>
+                                   <option value="10400">Valparaiso centro puerto</option>
+                                   <option value="13026">Valparaiso Playa Ancha</option>
+                                   <option value="10322">Placilla</option>
+                                   <option value="10738">Curauma</option>
+                                   <option value="19084">Quintay</option>
+                                   <option value="12506">Casa blanca</option>
+                                   <option value="12090">Tiltil</option>
+                                   <option value="10842">Valle alegre</option>
+                                   <option value="21970">Punta Pite Zapallar</option>
+                              </select>
+                         </div>
+                         <div class="row">
+                              <div class="col s5 m5">
+                                   <button class="btn" onclick="precalculo(14000,'1')">Calcular</button>
+                              </div>
+
+                              <div class="col s6 m6" style="text-align: justify;font-size:large;">
+                                   <span>Neto:</span><span><b>$</b></span><b><span class="precio"
+                                             id="precio1"></span></b>
+                              </div>
+                              <div class="row" id="divpro1" style="visibility:hidden;">
+                                   <!-- <div class="col">
+                                        <p>Por favor con el valor calculado llamar a este numero +569 6656 5772 para
+                                             realizar su
+                                             cotizacion y preparar el despacho</p>
+                                   </div> -->
+                                   <div class="col s12" style="text-align: center;">
+                                        <p style="text-align: justify;">ingrese su numero para asceptar esta cotizacion
+                                             nos comunicaremos con usted en maximo 10 minutos</p>
+                                   </div>
+
+                                   <div class="col s12">
+                                        <label for="numero1">Ingrese su numero(8 dígitos)</label><input type="number" id="numero1">
+                                   </div>
+
+                                   <div class="col s12 " >
+                                        <button  id="btn1" class="btn" onclick="salvardatosmensaje(14000,1)">Acepto Recivir el
+                                             LLamado para confirmar</button>
+                                   </div>
+                              </div>
+
+
+
+                              <div class="col s12">
+                                   <ul class="collapsible tamano">
+                                        <li>
+                                             <div class="collapsible-header">Ver mas
+                                                  sobre Arena Gruesa de planta</div>
+                                             <div class="collapsible-body"><span>es el conjunto de partículas que
+                                                       es resultado de la desintegración natural de las rocas o
+                                                       también después de la trituración que conservan cierta
+                                                       índice de grosor notorio lo que la hace especialmente útil
+                                                       para espesar mezclas de concreto.</span>
+                                             </div>
+                                        </li>
+                              </div>
+
+                         </div>
+
+
+                    </div>
+
+               </div>
+          </div>
+     </div>
+
+     <!-- imagen numero 2------------------------------------------------------------------ -->
+     <div id="imagen2" class="modal">
+          <div class="ajuste card horizontal">
+               <div class="card-image waves-effect waves-block waves-light arreglo">
+                    <img class="activator col s12 " src="img/3.jpg">
+                    <span class="card-title letras2"><b>Arena Rubia<br></b>Gruesa</span>
+               </div>
+               <div class="card-content col s12">
+                    <div class="row">
+                         <div class="col s12 m3">
+                              <label for="cantidad2">Cantidad en m<sup>3</sup></label>
+                              <input id="cantidad2" type="number">
+                         </div>
+                         <div class="col s12 m9">
+                              <label for="selectordeciudad2">Seleccione Comuna</label>
+                              <select class="sel" id="selectordeciudad2">
+                                   <option value="" disabled selected>seleccione...</option>
+                                   <option value="4732">Quillota</option>
+                                   <option value="1664">limache</option>
+                                   <option value="3276">Olmué</option>
+                                   <option value="3614">Villa Alemana</option>
+                                   <option value="2132">Peña blanca</option>
+                                   <option value="4732">Quilpue</option>
+                                   <option value="3796">Belloto Norte</option>
+                                   <option value="6890">El Salto</option>
+                                   <option value="7956">Viña centro</option>
+                                   <option value="10400">Valparaiso centro puerto</option>
+                                   <option value="13026">Valparaiso Playa Ancha</option>
+                                   <option value="10322">Placilla</option>
+                                   <option value="10738">Curauma</option>
+                                   <option value="19084">Quintay</option>
+                                   <option value="12506">Casa blanca</option>
+                                   <option value="12090">Tiltil</option>
+                                   <option value="10842">Valle alegre</option>
+                                   <option value="21970">Punta Pite Zapallar</option>
+                              </select>
+                         </div>
+                         <div class="row">
+                              <div class="col s5 m5">
+                                   <button class="btn" onclick="precalculo(10000,'2')">Calcular</button>
+                              </div>
+
+                              <div class="col s6 m6" style="text-align: justify;font-size:large;">
+                                   <span>Neto:</span><span><b>$</b></span><b><span class="precio"
+                                             id="precio2"></span></b>
+                              </div>
+                              <div class="row" id="divpro2" style="visibility:hidden;">
+                                   <!-- <div class="col">
+                                        <p>Por favor con el valor calculado llamar a este numero +569 6656 5772 para
+                                             realizar su
+                                             cotizacion y preparar el despacho</p>
+                                   </div> -->
+                                   <div class="col s12" style="text-align: center;">
+                                        <p style="text-align: justify;">ingrese su numero para asceptar esta cotizacion
+                                             nos comunicaremos con usted en maximo 10 minutos</p>
+                                   </div>
+
+                                   <div class="col s12">
+                                        <label for="numero2">Ingrese su numero(8 dígitos)</label><input type="number" id="numero2">
+                                   </div>
+
+                                   <div class="col s12 " >
+                                        <button  id="btn2" class="btn" onclick="salvardatosmensaje(10000,2)">Acepto Recivir el
+                                             LLamado para confirmar</button>
+                                   </div>
+                              </div>
+
+
+
+                              <div class="col s12">
+                                   <ul class="collapsible tamano">
+                                        <li>
+                                             <div class="collapsible-header">Ver mas
+                                                  sobre Arena Rubia Gruesa</div>
+                                             <div class="collapsible-body"><span>es el conjunto de partículas que es resultado de la desintegración
+                                                  natural de las rocas o también después de la trituración que conservan cierto índice de
+                                                  grosor notorio, lo que la hace especialmente útil para espesar mezclas de concreto,
+                                                  normalmente se encuentra en estado natural en esteros.</span>
+                                             </div>
+                                        </li>
+                              </div>
+
+                         </div>
+
+
+                    </div>
+
+               </div>
+          </div>
+     </div>
+     <!-- imagen numero 3------------------------------------------------------------------ -->
+     <div id="imagen3" class="modal">
+          <div class="ajuste card horizontal">
+               <div class="card-image waves-effect waves-block waves-light arreglo">
+                    <img class="activator col s12 " src="img/4.jpg">
+                    <span class="card-title letras2"><b>cemento</b></span>
+               </div>
+               <div class="card-content col s12">
+                    <div class="row">
+                         <div class="col s12 m3">
+                              <label for="cantidad3">Cantidad/unidad</label>
+                              <input id="cantidad3" type="number">
+                         </div>
+                         <div class="col s12 m9">
+                              <label for="selectordeciudad3">no hay despacho a domicilio</label>
+                              <select class="sel" id="selectordeciudad3" disabled>
+                                   <option value="" disabled selected>seleccione...</option>
+                                   <option value="4732">Quillota</option>
+                                   <option value="1664">limache</option>
+                                   <option value="3276">Olmué</option>
+                                   <option value="3614">Villa Alemana</option>
+                                   <option value="2132">Peña blanca</option>
+                                   <option value="4732">Quilpue</option>
+                                   <option value="3796">Belloto Norte</option>
+                                   <option value="6890">El Salto</option>
+                                   <option value="7956">Viña centro</option>
+                                   <option value="10400">Valparaiso centro puerto</option>
+                                   <option value="13026">Valparaiso Playa Ancha</option>
+                                   <option value="10322">Placilla</option>
+                                   <option value="10738">Curauma</option>
+                                   <option value="19084">Quintay</option>
+                                   <option value="12506">Casa blanca</option>
+                                   <option value="12090">Tiltil</option>
+                                   <option value="10842">Valle alegre</option>
+                                   <option value="21970">Punta Pite Zapallar</option>
+                              </select>
+                         </div>
+                         <div class="row">
+                              <div class="col s5 m5">
+                                   <button class="btn" onclick="cemento('3')">Calcular</button>
+                              </div>
+
+                              <div class="col s6 m6" style="text-align: justify;font-size:large;">
+                                   <span>Neto:</span><span><b>$</b></span><b><span class="precio"
+                                             id="precio3"></span></b>
+                              </div>
+                              <div class="row" id="divpro3" style="visibility:hidden;">
+                                   <!-- <div class="col">
+                                        <p>Por favor con el valor calculado llamar a este numero +569 6656 5772 para
+                                             realizar su
+                                             cotizacion y preparar el despacho</p>
+                                   </div> -->
+                                   <div class="col s12" style="text-align: center;">
+                                        <p style="text-align: justify;">ingrese su numero para asceptar esta cotizacion
+                                             nos comunicaremos con usted en maximo 10 minutos</p>
+                                   </div>
+
+                                   <div class="col s12">
+                                        <label for="numero3">Ingrese su numero(8 dígitos)</label><input type="number" id="numero3">
+                                   </div>
+
+                                   <div class="col s12 " >
+                                        <button  id="btn3" class="btn" onclick="salvardatosmensaje(2500,'3')">Acepto Recivir el
+                                             LLamado para confirmar</button>
+                                   </div>
+                              </div>
+
+
+
+                              <div class="col s12">
+                                   <ul class="collapsible tamano">
+                                        <li>
+                                             <div class="collapsible-header">Ver mas
+                                                  sobre Arena Rubia Gruesa</div>
+                                             <div class="collapsible-body"><span>Material de construcción compuesto de una sustancia en polvo que
+                                                  mezclada con agua u otra sustancia, forma una pasta blanda que se endurece en
+                                                  contacto con el agua o el aire. Se emplea para hormigones, tapar o rellenar huecos y
+                                                  como componente aglutinante en bloques de hormigón y en argamasas.</span>
+                                             </div>
+                                        </li>
+                              </div>
+
+                         </div>
+
+
+                    </div>
+
+               </div>
+          </div>
+     </div>
+
+     <!-- imagen numero 4------------------------------------------------------------------ -->
+     <div id="imagen4" class="modal">
+          <div class="ajuste card horizontal">
+               <div class="card-image waves-effect waves-block waves-light arreglo">
+                    <img class="activator col s12 " src="img/5.png">
+                    <span class="card-title letras2"><b>Gravilla</b></span>
+               </div>
+               <div class="card-content col s12">
+                    <div class="row">
+                         <div class="col s12 m3">
+                              <label for="cantidad4">Cantidad en m<sup>3</sup></label>
+                              <input id="cantidad4" type="number">
+                         </div>
+                         <div class="col s12 m9">
+                              <label for="selectordeciudad4">Seleccione Comuna</label>
+                              <select class="sel" id="selectordeciudad4">
+                                   <option value="" disabled selected>seleccione...</option>
+                                   <option value="4732">Quillota</option>
+                                   <option value="1664">limache</option>
+                                   <option value="3276">Olmué</option>
+                                   <option value="3614">Villa Alemana</option>
+                                   <option value="2132">Peña blanca</option>
+                                   <option value="4732">Quilpue</option>
+                                   <option value="3796">Belloto Norte</option>
+                                   <option value="6890">El Salto</option>
+                                   <option value="7956">Viña centro</option>
+                                   <option value="10400">Valparaiso centro puerto</option>
+                                   <option value="13026">Valparaiso Playa Ancha</option>
+                                   <option value="10322">Placilla</option>
+                                   <option value="10738">Curauma</option>
+                                   <option value="19084">Quintay</option>
+                                   <option value="12506">Casa blanca</option>
+                                   <option value="12090">Tiltil</option>
+                                   <option value="10842">Valle alegre</option>
+                                   <option value="21970">Punta Pite Zapallar</option>
+                              </select>
+                         </div>
+                         <div class="row">
+                              <div class="col s5 m5">
+                                   <button class="btn" onclick="precalculo(11700,'4')">Calcular</button>
+                              </div>
+
+                              <div class="col s6 m6" style="text-align: justify;font-size:large;">
+                                   <span>Neto:</span><span><b>$</b></span><b><span class="precio"
+                                             id="precio4"></span></b>
+                              </div>
+                              <div class="row" id="divpro4" style="visibility:hidden;">
+                                   <!-- <div class="col">
+                                        <p>Por favor con el valor calculado llamar a este numero +569 6656 5772 para
+                                             realizar su
+                                             cotizacion y preparar el despacho</p>
+                                   </div> -->
+                                   <div class="col s12" style="text-align: center;">
+                                        <p style="text-align: justify;">ingrese su numero para asceptar esta cotizacion
+                                             nos comunicaremos con usted en maximo 10 minutos</p>
+                                   </div>
+
+                                   <div class="col s12">
+                                        <label for="numero4">Ingrese su numero(8 dígitos)</label><input type="number" id="numero4">
+                                   </div>
+
+                                   <div class="col s12 " >
+                                        <button  id="btn4" class="btn" onclick="salvardatosmensaje(11700,'4')">Acepto Recivir el
+                                             LLamado para confirmar</button>
+                                   </div>
+                              </div>
+
+
+
+                              <div class="col s12">
+                                   <ul class="collapsible tamano">
+                                        <li>
+                                             <div class="collapsible-header">Ver mas
+                                                  sobre Arena Rubia Gruesa</div>
+                                             <div class="collapsible-body"><span>Gravilla: Piedra o roca machacada o triturada, cuyos elementos tienen un grosor desd
+                                                  e  diez  hasta 19 milímetros, Contamos en este caso con gravilla ¾” = 19 milimetros</span>
+                                             </div>
+                                        </li>
+                              </div>
+
+                         </div>
+
+
+                    </div>
+
+               </div>
+          </div>
+     </div>
+     <!-- imagen numero 5------------------------------------------------------------------ -->
+     <div id="imagen5" class="modal">
+          <div class="ajuste card horizontal">
+               <div class="card-image waves-effect waves-block waves-light arreglo">
+                    <img class="activator col s12 " src="img/6.jpg">
+                    <span class="card-title letras2"><b>Grava</b></span>
+               </div>
+               <div class="card-content col s12">
+                    <div class="row">
+                         <div class="col s12 m3">
+                              <label for="cantidad5">Cantidad en m<sup>3</sup></label>
+                              <input id="cantidad5" type="number">
+                         </div>
+                         <div class="col s12 m9">
+                              <label for="selectordeciudad5">Seleccione Comuna</label>
+                              <select class="sel" id="selectordeciudad5">
+                                   <option value="" disabled selected>seleccione...</option>
+                                   <option value="4732">Quillota</option>
+                                   <option value="1664">limache</option>
+                                   <option value="3276">Olmué</option>
+                                   <option value="3614">Villa Alemana</option>
+                                   <option value="2132">Peña blanca</option>
+                                   <option value="4732">Quilpue</option>
+                                   <option value="3796">Belloto Norte</option>
+                                   <option value="6890">El Salto</option>
+                                   <option value="7956">Viña centro</option>
+                                   <option value="10400">Valparaiso centro puerto</option>
+                                   <option value="13026">Valparaiso Playa Ancha</option>
+                                   <option value="10322">Placilla</option>
+                                   <option value="10738">Curauma</option>
+                                   <option value="19084">Quintay</option>
+                                   <option value="12506">Casa blanca</option>
+                                   <option value="12090">Tiltil</option>
+                                   <option value="10842">Valle alegre</option>
+                                   <option value="21970">Punta Pite Zapallar</option>
+                              </select>
+                         </div>
+                         <div class="row">
+                              <div class="col s5 m5">
+                                   <button class="btn" onclick="precalculo(10000,'5')">Calcular</button>
+                              </div>
+
+                              <div class="col s6 m6" style="text-align: justify;font-size:large;">
+                                   <span>Neto:</span><span><b>$</b></span><b><span class="precio"
+                                             id="precio5"></span></b>
+                              </div>
+                              <div class="row" id="divpro5" style="visibility:hidden;">
+                                   <!-- <div class="col">
+                                        <p>Por favor con el valor calculado llamar a este numero +569 6656 5772 para
+                                             realizar su
+                                             cotizacion y preparar el despacho</p>
+                                   </div> -->
+                                   <div class="col s12" style="text-align: center;">
+                                        <p style="text-align: justify;">ingrese su numero para asceptar esta cotizacion
+                                             nos comunicaremos con usted en maximo 10 minutos</p>
+                                   </div>
+
+                                   <div class="col s12">
+                                        <label for="numero5">Ingrese su numero(8 dígitos)</label><input type="number" id="numero5">
+                                   </div>
+
+                                   <div class="col s12 " >
+                                        <button  id="btn5" class="btn" onclick="salvardatosmensaje(10000,'5')">Acepto Recivir el
+                                             LLamado para confirmar</button>
+                                   </div>
+                              </div>
+
+
+
+                              <div class="col s12">
+                                   <ul class="collapsible tamano">
+                                        <li>
+                                             <div class="collapsible-header">Ver mas
+                                                  sobre Arena Rubia Gruesa</div>
+                                             <div class="collapsible-body"><span>Piedra triturada que se usa para construir caminos y carreteras, para hacer
+                                                  hormigón, etc. Contamos con Grava de 1 ½” = 38 milimetros</span>
+                                             </div>
+                                        </li>
+                              </div>
+
+                         </div>
+
+
+                    </div>
+
+               </div>
+          </div>
+     </div>
+     <!-- imagen numero 6------------------------------------------------------------------ -->
+     <div id="imagen6" class="modal">
+          <div class="ajuste card horizontal">
+               <div class="card-image waves-effect waves-block waves-light arreglo">
+                    <img class="activator col s12 " src="img/7.jpg">
+                    <span class="card-title letras2"><b>Base Estabilizada</b></span>
+               </div>
+               <div class="card-content col s12">
+                    <div class="row">
+                         <div class="col s12 m3">
+                              <label for="cantidad6">Cantidad en m<sup>3</sup></label>
+                              <input id="cantidad6" type="number">
+                         </div>
+                         <div class="col s12 m9">
+                              <label for="selectordeciudad6">Seleccione Comuna</label>
+                              <select class="sel" id="selectordeciudad6">
+                                   <option value="" disabled selected>seleccione...</option>
+                                   <option value="4732">Quillota</option>
+                                   <option value="1664">limache</option>
+                                   <option value="3276">Olmué</option>
+                                   <option value="3614">Villa Alemana</option>
+                                   <option value="2132">Peña blanca</option>
+                                   <option value="4732">Quilpue</option>
+                                   <option value="3796">Belloto Norte</option>
+                                   <option value="6890">El Salto</option>
+                                   <option value="7956">Viña centro</option>
+                                   <option value="10400">Valparaiso centro puerto</option>
+                                   <option value="13026">Valparaiso Playa Ancha</option>
+                                   <option value="10322">Placilla</option>
+                                   <option value="10738">Curauma</option>
+                                   <option value="19084">Quintay</option>
+                                   <option value="12506">Casa blanca</option>
+                                   <option value="12090">Tiltil</option>
+                                   <option value="10842">Valle alegre</option>
+                                   <option value="21970">Punta Pite Zapallar</option>
+                              </select>
+                         </div>
+                         <div class="row">
+                              <div class="col s5 m5">
+                                   <button class="btn" onclick="precalculo(10100,'6')">Calcular</button>
+                              </div>
+
+                              <div class="col s6 m6" style="text-align: justify;font-size:large;">
+                                   <span>Neto:</span><span><b>$</b></span><b><span class="precio"
+                                             id="precio6"></span></b>
+                              </div>
+                              <div class="row" id="divpro6" style="visibility:hidden;">
+                                   <!-- <div class="col">
+                                        <p>Por favor con el valor calculado llamar a este numero +569 6656 5772 para
+                                             realizar su
+                                             cotizacion y preparar el despacho</p>
+                                   </div> -->
+                                   <div class="col s12" style="text-align: center;">
+                                        <p style="text-align: justify;">ingrese su numero para asceptar esta cotizacion
+                                             nos comunicaremos con usted en maximo 10 minutos</p>
+                                   </div>
+
+                                   <div class="col s12">
+                                        <label for="numero6">Ingrese su numero(8 dígitos)</label><input type="number" id="numero6">
+                                   </div>
+
+                                   <div class="col s12 " >
+                                        <button  id="btn6" class="btn" onclick="salvardatosmensaje(10100,'6')">Acepto Recivir el
+                                             LLamado para confirmar</button>
+                                   </div>
+                              </div>
+
+
+
+                              <div class="col s12">
+                                   <ul class="collapsible tamano">
+                                        <li>
+                                             <div class="collapsible-header">Ver mas
+                                                  sobre Arena Rubia Gruesa</div>
+                                             <div class="collapsible-body"><span>En construcción se refiere a aquella base que se puede
+                                                  compactar, está libre de material orgánico y sirve como base para recibir pavimentos
+                                                  se compone de diferentes tamaños de áridos. Con una humedad óptima la
+                                                  compactación queda perfecta.</span>
+                                             </div>
+                                        </li>
+                              </div>
+
+                         </div>
+
+
+                    </div>
+
+               </div>
+          </div>
+     </div>
+     <!-- imagen numero 7------------------------------------------------------------------ -->
+     <div id="imagen7" class="modal">
+          <div class="ajuste card horizontal">
+               <div class="card-image waves-effect waves-block waves-light arreglo">
+                    <img class="activator col s12 " src="img/8.jpg">
+                    <span class="card-title letras2"><b>Bolones</b></span>
+               </div>
+               <div class="card-content col s12">
+                    <div class="row">
+                         <div class="col s12 m3">
+                              <label for="cantidad7">Cantidad en m<sup>3</sup></label>
+                              <input id="cantidad7" type="number">
+                         </div>
+                         <div class="col s12 m9">
+                              <label for="selectordeciudad7">Seleccione Comuna</label>
+                              <select class="sel" id="selectordeciudad7">
+                                   <option value="" disabled selected>seleccione...</option>
+                                   <option value="4732">Quillota</option>
+                                   <option value="1664">limache</option>
+                                   <option value="3276">Olmué</option>
+                                   <option value="3614">Villa Alemana</option>
+                                   <option value="2132">Peña blanca</option>
+                                   <option value="4732">Quilpue</option>
+                                   <option value="3796">Belloto Norte</option>
+                                   <option value="6890">El Salto</option>
+                                   <option value="7956">Viña centro</option>
+                                   <option value="10400">Valparaiso centro puerto</option>
+                                   <option value="13026">Valparaiso Playa Ancha</option>
+                                   <option value="10322">Placilla</option>
+                                   <option value="10738">Curauma</option>
+                                   <option value="19084">Quintay</option>
+                                   <option value="12506">Casa blanca</option>
+                                   <option value="12090">Tiltil</option>
+                                   <option value="10842">Valle alegre</option>
+                                   <option value="21970">Punta Pite Zapallar</option>
+                              </select>
+                         </div>
+                         <div class="row">
+                              <div class="col s5 m5">
+                                   <button class="btn" onclick="precalculo(10100,'7')">Calcular</button>
+                              </div>
+
+                              <div class="col s6 m6" style="text-align: justify;font-size:large;">
+                                   <span>Neto:</span><span><b>$</b></span><b><span class="precio"
+                                             id="precio7"></span></b>
+                              </div>
+                              <div class="row" id="divpro7" style="visibility:hidden;">
+                                   <!-- <div class="col">
+                                        <p>Por favor con el valor calculado llamar a este numero +569 6656 5772 para
+                                             realizar su
+                                             cotizacion y preparar el despacho</p>
+                                   </div> -->
+                                   <div class="col s12" style="text-align: center;">
+                                        <p style="text-align: justify;">ingrese su numero para asceptar esta cotizacion
+                                             nos comunicaremos con usted en maximo 10 minutos</p>
+                                   </div>
+
+                                   <div class="col s12">
+                                        <label for="numero7">Ingrese su numero(8 dígitos)</label><input type="number" id="numero7">
+                                   </div>
+
+                                   <div class="col s12 " >
+                                        <button  id="btn7" class="btn" onclick="salvardatosmensaje(10100,'7')">Acepto Recivir el
+                                             LLamado para confirmar</button>
+                                   </div>
+                              </div>
+
+
+
+                              <div class="col s12">
+                                   <ul class="collapsible tamano">
+                                        <li>
+                                             <div class="collapsible-header">Ver mas
+                                                  sobre Arena Rubia Gruesa</div>
+                                             <div class="collapsible-body"><span>Piedra que se pone en los cimientos de las construcciones, entre otros usos. Se
+                                                  trata de un cascajo redondeado de piedra, normalmente utilizados en Drenes u
+                                                  Ornamentación y mamposterías.</span>
+                                             </div>
+                                        </li>
+                              </div>
+
+                         </div>
+
+
+                    </div>
+
+               </div>
+          </div>
+     </div>
+     <!-- imagen numero 9------------------------------------------------------------------ -->
+     <div id="imagen8" class="modal">
+          <div class="ajuste card horizontal">
+               <div class="card-image waves-effect waves-block waves-light arreglo">
+                    <img class="activator col s12 " src="img/9.jpg">
+                    <span class="card-title letras2"><b>Maicillo</b></span>
+               </div>
+               <div class="card-content col s12">
+                    <div class="row">
+                         <div class="col s12 m3">
+                              <label for="cantidad8">Cantidad en m<sup>3</sup></label>
+                              <input id="cantidad8" type="number">
+                         </div>
+                         <div class="col s12 m9">
+                              <label for="selectordeciudad8">Seleccione Comuna</label>
+                              <select class="sel" id="selectordeciudad8">
+                                   <option value="" disabled selected>seleccione...</option>
+                                   <option value="4732">Quillota</option>
+                                   <option value="1664">limache</option>
+                                   <option value="3276">Olmué</option>
+                                   <option value="3614">Villa Alemana</option>
+                                   <option value="2132">Peña blanca</option>
+                                   <option value="4732">Quilpue</option>
+                                   <option value="3796">Belloto Norte</option>
+                                   <option value="6890">El Salto</option>
+                                   <option value="7956">Viña centro</option>
+                                   <option value="10400">Valparaiso centro puerto</option>
+                                   <option value="13026">Valparaiso Playa Ancha</option>
+                                   <option value="10322">Placilla</option>
+                                   <option value="10738">Curauma</option>
+                                   <option value="19084">Quintay</option>
+                                   <option value="12506">Casa blanca</option>
+                                   <option value="12090">Tiltil</option>
+                                   <option value="10842">Valle alegre</option>
+                                   <option value="21970">Punta Pite Zapallar</option>
+                              </select>
+                         </div>
+                         <div class="row">
+                              <div class="col s5 m5">
+                                   <button class="btn" onclick="precalculo(10000,'8')">Calcular</button>
+                              </div>
+
+                              <div class="col s6 m6" style="text-align: justify;font-size:large;">
+                                   <span>Neto:</span><span><b>$</b></span><b><span class="precio"
+                                             id="precio8"></span></b>
+                              </div>
+                              <div class="row" id="divpro8" style="visibility:hidden;">
+                                   <!-- <div class="col">
+                                        <p>Por favor con el valor calculado llamar a este numero +569 6656 5772 para
+                                             realizar su
+                                             cotizacion y preparar el despacho</p>
+                                   </div> -->
+                                   <div class="col s12" style="text-align: center;">
+                                        <p style="text-align: justify;">ingrese su numero para asceptar esta cotizacion
+                                             nos comunicaremos con usted en maximo 10 minutos</p>
+                                   </div>
+
+                                   <div class="col s12">
+                                        <label for="numero8">Ingrese su numero(8 dígitos)</label><input type="number" id="numero8">
+                                   </div>
+
+                                   <div class="col s12 " >
+                                        <button  id="btn8" class="btn" onclick="salvardatosmensaje(8000,'8')">Acepto Recivir el
+                                             LLamado para confirmar</button>
+                                   </div>
+                              </div>
+
+
+
+                              <div class="col s12">
+                                   <ul class="collapsible tamano">
+                                        <li>
+                                             <div class="collapsible-header">Ver mas
+                                                  sobre Arena Rubia Gruesa</div>
+                                             <div class="collapsible-body"><span>Viene de la familia de Arena gruesa y amarillenta con que se cubre el
+                                                  pavimento de jardines y patios, en caso de querer que dure más tiempo en estado de
+                                                  dureza se puede mezclar con cemento.</span>
+                                             </div>
+                                        </li>
+                              </div>
+
+                         </div>
+
+
+                    </div>
+
+               </div>
+          </div>
+     </div>
+     <!-- imagen numero 2------------------------------------------------------------------ -->
+
+
+     <div class="row">
+          <div class="col m4">
+               <div class="row">
+                    <div class="col s12 center-align letras">
+                         <h1 class="titulo"> Jara Mayne </h1>
+                    </div>
+
+                    <div class="col s12 center-align">
+                         <img class="tractor" src="img/10.jpg" alt="">
+                    </div>
+                    <div class="col s12 center-align letras">
+                         <h4>Aridos Jara Mayne</h4>
+                         <h4>+569 6656 5772</h4>
+                         <h5>aridosjarameyne@gmail.com</h5>
+                    </div>
+               </div>
+          </div>
+
+
+
+          <div class="col m8 bordes">
+               <div class="galeria">
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <!-- /*---------------------------------------------------------------*/ -->
+
+                    <div class="col s12 m12 l6 ">
+                         <div class="card ">
+                              <div class="card-image ">
+                                   <div class="opacity-img material-placeholder">
+                                        <img href="#imagen1" src="img/2.jpg"
+                                             class="responsive-img materialboxed  modal-trigger" alt="">
+                                        <span id='nombre1' class="card-title letras2"><b>Arena Gruesa<br></b>negra de
+                                             planta</span>
+                                   </div>
+                                   <div class="opacity-titulo">
+
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <div class="col s12 m12 l6">
+                         <div class="card ">
+                              <div class="card-image ">
+                                   <div class="material-placeholder">
+                                        <img href="#imagen2" src="img/3.jpg"
+                                             class="responsive-img materialboxed  modal-trigger" alt="">
+                                        <span class="card-title letras2"><b>Arena Gruesa <br></b>Rubia</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <div class="col s12 m12 l6">
+                         <div class="card ">
+                              <div class="card-image ">
+                                   <div class="material-placeholder">
+                                        <img href="#imagen4" src="img/5.png"
+                                             class="responsive-img materialboxed  modal-trigger" alt="">
+                                        <span class="card-title letras2"><b>Gravilla <br></b></span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <div class="col s12 m12 l6">
+                         <div class="card ">
+                              <div class="card-image ">
+                                   <div class="material-placeholder">
+                                        <img href="#imagen5" src="img/6.jpg"
+                                             class="responsive-img materialboxed  modal-trigger" alt="">
+                                        <span class="card-title letras2"><b>Grava <br></b></span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <div class="col s12 m12 l6">
+                         <div class="card ">
+                              <div class="card-image ">
+                                   <div class="material-placeholder">
+                                        <img href="#imagen6" src="img/7.jpg"
+                                             class="responsive-img materialboxed  modal-trigger" alt="">
+                                        <span class="card-title letras2"><b>Base Estabilizada <br></b></span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col s12 m12 l6">
+                         <div class="card ">
+                              <div class="card-image ">
+                                   <div class="material-placeholder">
+                                        <img href="#imagen7" src="img/8.jpg"
+                                             class="responsive-img materialboxed  modal-trigger" alt="">
+                                        <span class="card-title letras2"><b>Bolones <br></b></span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <div class="col s12 m12 l6">
+                         <div class="card ">
+                              <div class="card-image ">
+                                   <div class="material-placeholder">
+                                        <img href="#imagen8" src="img/9.jpg"
+                                             class="responsive-img materialboxed  modal-trigger" alt="">
+                                        <span class="card-title letras2"><b>Maicillo <br></b></span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <div class="col s12 m12 l6">
+                         <div class="card ">
+                              <div class="card-image ">
+                                   <div class="material-placeholder">
+                                        <img href="#imagen3" src="img/4.jpg"
+                                             class="responsive-img materialboxed  modal-trigger" alt="">
+                                        <span class="card-title letras2"><b>Cemento <br></b></span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <!-- /*---------------------------------------------------------------*/ -->
+                    <div class="col s12 m12 l3">
+                         <span id="btnn"><img src="img/button.png"></span>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+     <script src="js/main.js"></script>
+
+</body>
+
+</html>
