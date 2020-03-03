@@ -26,15 +26,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('select');
 
     var instances = M.FormSelect.init(elems);
 
 });
-
 
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.collapsible');
@@ -77,8 +74,6 @@ function precalculo(unitario, id) {
     
 }
 
-
-
 function mostrarbtn(id) {
     precio = document.getElementById('precio' + id)
     console.log('PRECIOCTM:',parseInt(precio.innerHTML))
@@ -97,12 +92,8 @@ function mostrarbtn(id) {
             }, 100);
         }else{
             document.getElementById("divpro" + id).style.visibility = "hidden";
-        }
-        
+        }        
     }
-
-
-
 }
 
 function salvardatosmensaje(unitario, id) {
@@ -116,7 +107,6 @@ function salvardatosmensaje(unitario, id) {
 
     resetingInterval(unitario, id, numero, ciudadprecio, cantidad, total, nombreciudad, nombreelemento)
 }
-
 
 // +numero+'%0a'+'Ciudad:'+nombreciudad+'%0a'+'Material:'+nombreelemento+'%0a'+'Cantidad+m3:'+cantidad+'tiempode+espera+10:41+test'
 function resetingInterval(unitario, id, numero, ciudadprecio, cantidad, total, nombreciudad, nombreelemento) {
