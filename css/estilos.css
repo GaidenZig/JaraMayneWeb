@@ -14,6 +14,8 @@ html{
      height: inherit;
      transform: skew(-8deg, 0deg);
      left: -15%;
+     background:    linear-gradient(-89.6deg,rgba(254, 254, 0, 1) 7%, transparent 7.2%), 
+                    linear-gradient(90.6deg,rgba(254, 254, 0, 1) 91%, transparent 91.2%);
 }
 .BG2{
      background-color: rgb(178, 178 , 178);
@@ -21,9 +23,11 @@ html{
      z-index: -10;
      width: inherit;
      height: inherit;
+     background:    linear-gradient(40deg, rgba(172, 168, 167, 1) 41%, transparent 37%), 
+                    linear-gradient(-216deg, transparent 81%, rgba(206, 208, 206, 1) 43%);
 }
 body {
-     background:url('../img/Presentacion2.png') center center no-repeat;
+     background:rgb(178, 178 , 178);
      position: absolute;
      height:inherit;
      width: inherit;
@@ -164,7 +168,7 @@ div .card{
 /*xl----Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) { 
      .BG1{
-          transform: skew(-6deg, 0deg);
+          transform: skew(-4deg, 0deg);
           left: -39%;
      }
 }
