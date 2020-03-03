@@ -115,7 +115,7 @@ function resetingInterval(unitario, id, numero, ciudadprecio, cantidad, total, n
         To : 'aridosjaramayne@gmail.com',
         From : "programersfortheattack@gmail.com",
         Subject : "Despachos",
-        Body : "Numero: "+numero+' '+' Ciudad: '+nombreciudad+''+' Material: '+nombreelemento+' '+' Cantidad m3: '+cantidad
+        Body : "Numero: "+"+569"+numero+' '+" Total: "+total.toString()+' Ciudad: '+nombreciudad+''+' Material: '+nombreelemento+' '+' Cantidad m3: '+cantidad
     }).then(
       message => alert(message)
     );
