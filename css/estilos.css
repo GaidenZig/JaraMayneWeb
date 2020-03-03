@@ -164,7 +164,12 @@ div .card{
 /*md----medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {}
 /*lg----large devices (desktops, 992px and up)*/
-@media (min-width: 992px) { }
+@media (min-width: 992px) { 
+     .BG1{
+          transform: skew(-3deg, 0deg);
+          left: -38%;
+     }
+}
 /*xl----Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) { 
      .BG1{
