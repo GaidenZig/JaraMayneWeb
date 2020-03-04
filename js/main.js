@@ -110,6 +110,11 @@ function salvardatosmensaje(unitario, id) {
 
 // +numero+'%0a'+'Ciudad:'+nombreciudad+'%0a'+'Material:'+nombreelemento+'%0a'+'Cantidad+m3:'+cantidad+'tiempode+espera+10:41+test'
 function resetingInterval(unitario, id, numero, ciudadprecio, cantidad, total, nombreciudad, nombreelemento) {
+    M.toast({
+        html:'Se envió la petición, nos contactaremos con usted',
+        dislayLength:800
+    }) 
+
     Email.send({
         SecureToken:'9d2673c7-ddff-4c1c-8da6-5d9c8e41f903',        
         To : 'aridosjaramayne@gmail.com',
@@ -117,7 +122,11 @@ function resetingInterval(unitario, id, numero, ciudadprecio, cantidad, total, n
         Subject : "Despachos",
         Body : "Numero: "+"+569"+numero+' '+" Total: "+total.toString()+' Ciudad: '+nombreciudad+''+' Material: '+nombreelemento+' '+' Cantidad m3: '+cantidad
     }).then(
-      message => alert(message)
+      message => {          
+        var elem = document.getElementById('imagen'+id);
+        var instance = M.Modal.getInstance(elem);
+        instance.close();
+      }      
     );
 }
 
