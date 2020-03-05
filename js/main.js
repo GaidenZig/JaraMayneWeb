@@ -9,8 +9,9 @@
 function cemento(id) {
     let valorSaco=3490;
     cantidad = document.getElementById("cantidad" + id).value
-    calculofinal=cantidad*valorSaco;
-    document.getElementById('precio' + id).innerHTML = Math.round(calculofinal).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+    calculofinal=cantidad * valorSaco;
+    final=(calculofinal * 1.2) * 1.19;
+    document.getElementById('precio' + id).innerHTML = Math.round(final).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
     mostrarbtn(id)
 }
 document.addEventListener('DOMContentLoaded', function () {
@@ -52,13 +53,12 @@ let numero;
 let cantidad;
 
 function calculo(ciudadvalor, material, numero, cantidad) {
-    calculofinal = 0
-    console.log('ciudad:', ciudadvalor, 'material', material, 'cantidad', cantidad)
-    let calculo = (ciudadvalor + material) * 1.2
+    calculofinal = 0;
+    let calculo = (ciudadvalor + material) * 1.2;
+    calculofinal = calculo * cantidad;
+    final = calculofinal*1.19;
 
-    calculofinal = calculo * cantidad
-
-    document.getElementById('precio' + numero).innerHTML = Math.round(calculofinal).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+    document.getElementById('precio' + numero).innerHTML = Math.round(final).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
     console.log(calculofinal)
     return calculo
 }
@@ -76,7 +76,6 @@ function precalculo(unitario, id) {
 
 function mostrarbtn(id) {
     precio = document.getElementById('precio' + id)
-    console.log('PRECIOCTM:',parseInt(precio.innerHTML))
     if (precio != null) {
         
         if ( parseInt(precio.innerHTML)>0){
@@ -102,25 +101,35 @@ function salvardatosmensaje(unitario, id) {
     nombreciudad = document.getElementById("selectordeciudad" + id).options[document.getElementById("selectordeciudad" + id).selectedIndex].text;
     cantidad = document.getElementById("cantidad" + id).value;
     nombreelemento = $('#nombre'+id).text();
-    console.log('preciociudad: ', ciudadprecio, 'cantidad:', cantidad, 'unitario: ', unitario, 'ID: ', id, 'nombre material:', nombreelemento);
-    total = ((ciudadprecio + unitario) * 1.2) * cantidad;
 
-    resetingInterval(unitario, id, numero, ciudadprecio, cantidad, total, nombreciudad, nombreelemento)
+    if(id==3){
+        ciudadprecio = 0;
+        nombreciudad = 'No hay despachos asociados para cemento';
+        nombreelemento = $('#nombre'+id).text();
+    }
+    
+    total = (((parseInt(ciudadprecio) + unitario) * 1.2)*cantidad)*1.19;
+
+
+    resetingInterval(unitario, id, numero, ciudadprecio, cantidad, Math.round(total), nombreciudad, nombreelemento)
 }
 
-// +numero+'%0a'+'Ciudad:'+nombreciudad+'%0a'+'Material:'+nombreelemento+'%0a'+'Cantidad+m3:'+cantidad+'tiempode+espera+10:41+test'
 function resetingInterval(unitario, id, numero, ciudadprecio, cantidad, total, nombreciudad, nombreelemento) {
     M.toast({
         html:'Se envió la petición, nos contactaremos con usted',
         dislayLength:800
     }) 
-
+    console.log("Numero: "+"+569"+numero+' '+" Total: "+total.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")+' Ciudad: '+nombreciudad+''+' Material: '+nombreelemento+' '+' Cantidad m3: '+cantidad); 
     Email.send({
         SecureToken:'9d2673c7-ddff-4c1c-8da6-5d9c8e41f903',        
         To : 'aridosjaramayne@gmail.com',
         From : "programersfortheattack@gmail.com",
         Subject : "Despachos",
-        Body : "Numero: "+"+569"+numero+' '+" Total: "+total.toString()+' Ciudad: '+nombreciudad+''+' Material: '+nombreelemento+' '+' Cantidad m3: '+cantidad
+        Body :  "<b>Numero     :</b> "+"+569"+numero+'<br>'+
+                "<b>Total      :</b> "+"$"+total.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")+'<br>'+
+                '<b>Ciudad     :</b> '+nombreciudad+'<br>'+
+                '<b>Material   :</b> '+nombreelemento+'<br>'+
+                '<b>Cantidad m<sup>3</sup>:</b> '+cantidad
     }).then(
       message => {          
         var elem = document.getElementById('imagen'+id);
