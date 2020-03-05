@@ -101,7 +101,7 @@ function salvardatosmensaje(unitario, id) {
     ciudadprecio = document.getElementById("selectordeciudad" + id).value;
     nombreciudad = document.getElementById("selectordeciudad" + id).options[document.getElementById("selectordeciudad" + id).selectedIndex].text;
     cantidad = document.getElementById("cantidad" + id).value;
-    nombreelemento = $('#nombre1').text();
+    nombreelemento = $('#nombre'+id).text();
     console.log('preciociudad: ', ciudadprecio, 'cantidad:', cantidad, 'unitario: ', unitario, 'ID: ', id, 'nombre material:', nombreelemento);
     total = ((ciudadprecio + unitario) * 1.2) * cantidad;
 
