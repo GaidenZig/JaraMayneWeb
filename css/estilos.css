@@ -109,13 +109,6 @@ div .card{
      width: 100%;
      height: 100%;
 }
-#btnn img{
-     position: fixed;
-     left: 89%;
-     bottom: 2%;
-     box-shadow: none;
-     height: 100px;
-}
 .phone-code{
      height: 2.9rem;
      align-content: center;     
@@ -134,24 +127,26 @@ div .card{
      padding-bottom: 1% !important;
      padding-left: 4% !important;
 }
+.card-image .card-title .btn-small{
+     padding-left: 12%;padding-right: 12%;
+     font-size: 11px;
+     height: 98%;
+     width: 100%;
+     line-height: 20px;
+     color: #7d4c01;
+     font-weight: bold;
+}
 
 /*xs----Extra small*/
 @media screen and (min-width:320px){
-     #btnn img {
-          right: 0%;
-          position: fixed;
-          bottom: 2%;
-          box-shadow: none;
-          height: 50px;
-      }
-      div .card {
+     div .card {
           width: 100%;
           height: 122%;
-      }
-      ul.collapsible {
+     }
+     ul.collapsible {
           width: 81.3%;
           width: 260.4px;
-      }
+     }
 }
 /*sm----small (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
@@ -163,13 +158,6 @@ div .card{
           height: 199px;
           
      }
-     #btnn img {
-          right: 0%;
-          position: fixed;
-          bottom: 2%;
-          box-shadow: none;
-          height: 100px;
-     }
      ul.collapsible {
           width: 81.3%;
           width: 653.5px;
@@ -180,6 +168,9 @@ div .card{
      .phone-code{
           font-size: 15px;
           text-align: center;
+     }
+     .card-image .card-title .btn-small{
+          padding-left: 16%; padding-right: 16%;
      }
 }
 

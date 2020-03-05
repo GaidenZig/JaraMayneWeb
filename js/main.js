@@ -130,3 +130,4 @@ function resetingInterval(unitario, id, numero, ciudadprecio, cantidad, total, n
     );
 }
 
+
